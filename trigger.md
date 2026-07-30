@@ -85,28 +85,46 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 
 ### Menu Options
 
+**Main Menu:**
+
 | Option | Action | Description |
 |--------|--------|-------------|
 | **Install Triggers** (Recommended) | Run installation script | Install all 16 trigger context files to OpenCode |
-| **Verify Installation** | Check status | Verify which triggers are installed and working |
+| **Manage Triggers** | Open submenu | Verify, uninstall, view triggers, or see details |
+| **Exit** | Close menu | Return to normal conversation |
+
+**Manage Triggers Submenu:**
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **Verify Installation** (Recommended) | Check status | Verify which triggers are installed and working |
 | **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
 | **View Trigger List** | Show table | Display all available triggers with their commands |
 | **View Trigger Details** | Show specific trigger | Read and display a specific trigger's protocol |
-| **Exit** | Close menu | Return to normal conversation |
+| **Back to Main Menu** | Return | Go back to the main menu |
 
 ### Menu Format
 
-Present the menu using the question tool with this format:
+**Main Menu:**
 
 ```
 What would you like to do?
 
 1. Install Triggers (Recommended) — Install all 16 trigger context files
-2. Verify Installation — Check which triggers are installed
-3. Uninstall Triggers — Remove all trigger files
-4. View Trigger List — Show all available triggers
-5. View Trigger Details — Read a specific trigger's protocol
-6. Exit — Return to normal conversation
+2. Manage Triggers — Verify, uninstall, view triggers, or see details
+3. Exit — Return to normal conversation
+```
+
+**Manage Triggers Submenu:**
+
+```
+Trigger Management:
+
+1. Verify Installation (Recommended) — Check which triggers are installed
+2. Uninstall Triggers — Remove all trigger files
+3. View Trigger List — Show all available triggers
+4. View Trigger Details — Read a specific trigger's protocol
+5. Back to Main Menu — Return to main menu
 ```
 
 ### Menu Rules
