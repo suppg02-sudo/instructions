@@ -93,6 +93,7 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 | **Manage Intent** | Open submenu | Verify, uninstall, view triggers, or see details |
 | **Triggers** | Open submenu | View and manage individual triggers |
 | **Adding Software** | Open submenu | Install packages, tools, and dependencies |
+| **Adding Behaviour** | Open submenu | Add custom rules, workflows, and agent behaviors |
 | **Verify Installation** | Check status | Verify which triggers are installed and working |
 | **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
 | **View Trigger List** | Show table | Display all available triggers with their commands |
@@ -129,6 +130,17 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 | **View Installed Software** | Show list | Display currently installed packages and tools |
 | **Back to Main Menu** | Return | Go back to the main menu |
 
+**Adding Behaviour Submenu:**
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **Add Custom Trigger** (Recommended) | Create trigger | Define a new word trigger with custom protocol |
+| **Add Agent Rule** | Create rule | Add a behavioral rule to AGENTS.md |
+| **Add Workflow** | Create workflow | Define a multi-step workflow template |
+| **Add Anti-Pattern** | Create anti-pattern | Add a pattern to avoid in agent behavior |
+| **View Current Rules** | Show rules | Display all behavioral rules in AGENTS.md |
+| **Back to Main Menu** | Return | Go back to the main menu |
+
 ### Menu Format
 
 **Main Menu:**
@@ -140,11 +152,12 @@ What would you like to do?
 2. Manage Intent — Open submenu for advanced options
 3. Triggers — View and manage individual triggers
 4. Adding Software — Install packages, tools, and dependencies
-5. Verify Installation — Check which triggers are installed
-6. Uninstall Triggers — Remove all trigger files
-7. View Trigger List — Show all available triggers
-8. View Trigger Details — Read a specific trigger's protocol
-9. Exit — Return to normal conversation
+5. Adding Behaviour — Add custom rules, workflows, and agent behaviors
+6. Verify Installation — Check which triggers are installed
+7. Uninstall Triggers — Remove all trigger files
+8. View Trigger List — Show all available triggers
+9. View Trigger Details — Read a specific trigger's protocol
+10. Exit — Return to normal conversation
 ```
 
 **Manage Intent Submenu:**
@@ -180,6 +193,19 @@ Adding Software:
 3. Install Docker Container — Pull and run a Docker container
 4. Install System Package — Install a system package (Linux/macOS)
 5. View Installed Software — Display currently installed packages
+6. Back to Main Menu — Return to main menu
+```
+
+**Adding Behaviour Submenu:**
+
+```
+Adding Behaviour:
+
+1. Add Custom Trigger (Recommended) — Define a new word trigger with custom protocol
+2. Add Agent Rule — Add a behavioral rule to AGENTS.md
+3. Add Workflow — Define a multi-step workflow template
+4. Add Anti-Pattern — Add a pattern to avoid in agent behavior
+5. View Current Rules — Display all behavioral rules in AGENTS.md
 6. Back to Main Menu — Return to main menu
 ```
 
