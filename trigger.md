@@ -91,6 +91,10 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 |--------|--------|-------------|
 | **Install Intent** (Recommended) | Run installation script | Install all 16 trigger context files to OpenCode |
 | **Manage Intent** | Open submenu | Verify, uninstall, view triggers, or see details |
+| **Verify Installation** | Check status | Verify which triggers are installed and working |
+| **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
+| **View Trigger List** | Show table | Display all available triggers with their commands |
+| **View Trigger Details** | Show specific trigger | Read and display a specific trigger's protocol |
 | **Exit** | Close menu | Return to normal conversation |
 
 **Manage Intent Submenu:**
@@ -111,8 +115,12 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 What would you like to do?
 
 1. Install Intent (Recommended) — Install all 16 trigger context files
-2. Manage Intent — Verify, uninstall, view triggers, or see details
-3. Exit — Return to normal conversation
+2. Manage Intent — Open submenu for advanced options
+3. Verify Installation — Check which triggers are installed
+4. Uninstall Triggers — Remove all trigger files
+5. View Trigger List — Show all available triggers
+6. View Trigger Details — Read a specific trigger's protocol
+7. Exit — Return to normal conversation
 ```
 
 **Manage Intent Submenu:**
