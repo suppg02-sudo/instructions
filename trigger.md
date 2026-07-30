@@ -92,6 +92,7 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 | **Install Intent** (Recommended) | Run installation script | Install all 16 trigger context files to OpenCode |
 | **Manage Intent** | Open submenu | Verify, uninstall, view triggers, or see details |
 | **Triggers** | Open submenu | View and manage individual triggers |
+| **Adding Software** | Open submenu | Install packages, tools, and dependencies |
 | **Verify Installation** | Check status | Verify which triggers are installed and working |
 | **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
 | **View Trigger List** | Show table | Display all available triggers with their commands |
@@ -117,6 +118,17 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 | **Trigger Categories** | Show categories | Group triggers by category (Core, Creative, Operations, etc.) |
 | **Back to Main Menu** | Return | Go back to the main menu |
 
+**Adding Software Submenu:**
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **Install Node.js Package** (Recommended) | Run npm install | Install an npm package globally or locally |
+| **Install Python Package** | Run pip install | Install a Python package via pip |
+| **Install Docker Container** | Run docker pull | Pull and run a Docker container |
+| **Install System Package** | Run apt/brew install | Install a system package (Linux/macOS) |
+| **View Installed Software** | Show list | Display currently installed packages and tools |
+| **Back to Main Menu** | Return | Go back to the main menu |
+
 ### Menu Format
 
 **Main Menu:**
@@ -127,11 +139,12 @@ What would you like to do?
 1. Install Intent (Recommended) — Install all 16 trigger context files
 2. Manage Intent — Open submenu for advanced options
 3. Triggers — View and manage individual triggers
-4. Verify Installation — Check which triggers are installed
-5. Uninstall Triggers — Remove all trigger files
-6. View Trigger List — Show all available triggers
-7. View Trigger Details — Read a specific trigger's protocol
-8. Exit — Return to normal conversation
+4. Adding Software — Install packages, tools, and dependencies
+5. Verify Installation — Check which triggers are installed
+6. Uninstall Triggers — Remove all trigger files
+7. View Trigger List — Show all available triggers
+8. View Trigger Details — Read a specific trigger's protocol
+9. Exit — Return to normal conversation
 ```
 
 **Manage Intent Submenu:**
@@ -155,6 +168,19 @@ Triggers:
 2. Test a Trigger — Execute a specific trigger to see its protocol
 3. Trigger Categories — Group triggers by category
 4. Back to Main Menu — Return to main menu
+```
+
+**Adding Software Submenu:**
+
+```
+Adding Software:
+
+1. Install Node.js Package (Recommended) — Install an npm package
+2. Install Python Package — Install a Python package via pip
+3. Install Docker Container — Pull and run a Docker container
+4. Install System Package — Install a system package (Linux/macOS)
+5. View Installed Software — Display currently installed packages
+6. Back to Main Menu — Return to main menu
 ```
 
 ### Menu Rules
