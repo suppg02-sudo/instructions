@@ -79,11 +79,51 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 - If multiple triggers in one message (one at start, one at end), process each one
 - Always read the trigger file FIRST, then follow the protocol exactly
 
-**Response Format:**
+## Menu Presentation
+
+**When the user types `menu` or any trigger that requires a choice, present a menu using the question tool.**
+
+### Menu Options
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **Install Triggers** (Recommended) | Run installation script | Install all 16 trigger context files to OpenCode |
+| **Verify Installation** | Check status | Verify which triggers are installed and working |
+| **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
+| **View Trigger List** | Show table | Display all available triggers with their commands |
+| **View Trigger Details** | Show specific trigger | Read and display a specific trigger's protocol |
+| **Exit** | Close menu | Return to normal conversation |
+
+### Menu Format
+
+Present the menu using the question tool with this format:
+
+```
+What would you like to do?
+
+1. Install Triggers (Recommended) — Install all 16 trigger context files
+2. Verify Installation — Check which triggers are installed
+3. Uninstall Triggers — Remove all trigger files
+4. View Trigger List — Show all available triggers
+5. View Trigger Details — Read a specific trigger's protocol
+6. Exit — Return to normal conversation
+```
+
+### Menu Rules
+
+- **Always use the question tool** — never hand-craft JSON
+- **Lead with (Recommended)** on the most common action
+- **Always include Exit** as the last option
+- **Group related options** if more than 6 items
+- **Use multi-select** if user might want to perform multiple actions
+
+### Response Format
+
 1. Detect trigger word(s) in user message
-2. Read the corresponding `.md` file from `~/.config/opencode/agents/context/`
-3. Follow the protocol in that file
-4. Execute the trigger's workflow
+2. If `menu` trigger → present menu via question tool
+3. If other trigger → read the corresponding `.md` file from `~/.config/opencode/agents/context/`
+4. Follow the protocol in that file
+5. Execute the trigger's workflow
 
 ## Configuration
 
