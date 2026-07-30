@@ -74,7 +74,7 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 
 **Detection Rules:**
 - Trigger words can be 1-3 characters (`>`, `1`, `2`, `co`, `?`, `u`, etc.)
-- Triggers are case-sensitive (`co` ≠ `CO`)
+- Triggers are NOT case-sensitive (`co` = `CO` = `Co`)
 - **Triggers are ONLY detected at the very beginning or very end of a message**
 - If multiple triggers in one message (one at start, one at end), process each one
 - Always read the trigger file FIRST, then follow the protocol exactly
