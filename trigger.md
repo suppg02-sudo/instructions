@@ -91,6 +91,7 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 |--------|--------|-------------|
 | **Install Intent** (Recommended) | Run installation script | Install all 16 trigger context files to OpenCode |
 | **Manage Intent** | Open submenu | Verify, uninstall, view triggers, or see details |
+| **Triggers** | Open submenu | View and manage individual triggers |
 | **Verify Installation** | Check status | Verify which triggers are installed and working |
 | **Uninstall Triggers** | Remove all | Remove all trigger context files from OpenCode |
 | **View Trigger List** | Show table | Display all available triggers with their commands |
@@ -107,6 +108,15 @@ bash /opt/pauly/optional/03-triggers/scripts/install.sh --uninstall
 | **View Trigger Details** | Show specific trigger | Read and display a specific trigger's protocol |
 | **Back to Main Menu** | Return | Go back to the main menu |
 
+**Triggers Submenu:**
+
+| Option | Action | Description |
+|--------|--------|-------------|
+| **View All Triggers** (Recommended) | Show table | Display all 16 triggers with commands and purposes |
+| **Test a Trigger** | Run trigger | Execute a specific trigger to see its protocol |
+| **Trigger Categories** | Show categories | Group triggers by category (Core, Creative, Operations, etc.) |
+| **Back to Main Menu** | Return | Go back to the main menu |
+
 ### Menu Format
 
 **Main Menu:**
@@ -116,11 +126,12 @@ What would you like to do?
 
 1. Install Intent (Recommended) — Install all 16 trigger context files
 2. Manage Intent — Open submenu for advanced options
-3. Verify Installation — Check which triggers are installed
-4. Uninstall Triggers — Remove all trigger files
-5. View Trigger List — Show all available triggers
-6. View Trigger Details — Read a specific trigger's protocol
-7. Exit — Return to normal conversation
+3. Triggers — View and manage individual triggers
+4. Verify Installation — Check which triggers are installed
+5. Uninstall Triggers — Remove all trigger files
+6. View Trigger List — Show all available triggers
+7. View Trigger Details — Read a specific trigger's protocol
+8. Exit — Return to normal conversation
 ```
 
 **Manage Intent Submenu:**
@@ -133,6 +144,17 @@ Trigger Management:
 3. View Trigger List — Show all available triggers
 4. View Trigger Details — Read a specific trigger's protocol
 5. Back to Main Menu — Return to main menu
+```
+
+**Triggers Submenu:**
+
+```
+Triggers:
+
+1. View All Triggers (Recommended) — Display all 16 triggers with commands
+2. Test a Trigger — Execute a specific trigger to see its protocol
+3. Trigger Categories — Group triggers by category
+4. Back to Main Menu — Return to main menu
 ```
 
 ### Menu Rules
