@@ -18,6 +18,7 @@ Gather recent context to build an intelligent picture of what may need updating:
 5. **Check** what skills were loaded this session (from session history)
 6. **Check** what files were edited this session (from session history)
 7. **Check** for any new services, ports, containers, or config changes
+8. **Run** `python3 ~/.config/opencode/scripts/session-log-analyzer.py --scan-recent --exclude-previous --find-gaps --find-errors --find-deviations` — analyze session logs for permanent improvements
 
 ### Step 2: Build Update Map
 
@@ -37,16 +38,30 @@ From the gathered context, categorise what might need updating:
 
 ### Step 3: Present Intelligent Suggestions
 
-Use the question tool to present what was found, with recommendations:
+**Clarifying Questions (using question tool):**
 
-```
-Based on this session, here's what may need updating:
+**Question 1**: "What scope of log analysis do you want for this update?"
 
-- [ ] 1. {Skill Name} — {what was found} (Recommended)
-- [ ] 2. AGENTS.md — {what was found}
-- [ ] 3. {Trigger/context} — {what was found}
-- [ ] 4. Full audit (scan everything)
-- [ ] 5. Skip — nothing to update
+| Option | Description |
+|--------|-------------|
+| **Quick scan (Recommended)** | Focus on major errors, gaps, and obvious improvements | 
+| **Deep analysis** | Comprehensive analysis including patterns and efficiency opportunities |
+| **Targeted review** | Specific areas (skills, triggers, or menus only) |
+
+**Question 2**: "What priority level for the log analysis?"
+
+| Option | Focus |
+|--------|-------|
+| **Performance priority (Recommended)** | Most critical fixes first (errors, crashes, inefficiencies) |
+| **Comprehensive** | All findings with effort estimates |
+| **Quick wins** | Only low-effort, high-impact fixes |
+
+**Phase 3.1: Run Enhanced Session Log Analysis**
+
+Run the enhanced session log analyzer with the selected options:
+
+```bash
+python3 ~/.config/opencode/scripts/session-log-analyzer.py --scan-recent --exclude-previous --find-gaps --find-errors --find-deviations --scope [quick|deep|targeted] --priority [performance|comprehensive|quick-wins] --format question-tool
 ```
 
 **Rules**:
@@ -81,6 +96,27 @@ Analyse the conversation history (or broader scope) for:
 
 ## Phase 3: Cross-Reference
 
+**Question Tool Validation Check:**
+
+Before proceeding with analysis, validate that the question tool is properly configured:
+
+```bash
+python3 ~/.config/opencode/scripts/validate-question-tool.py --config-check --status-check
+```
+
+**Expected Output:**
+- ✅ Question tool: ENABLED
+- ✅ Timeout: 30000ms (30 seconds)
+- ✅ Max retries: 3
+- ✅ Validation: All checks passing
+- ✅ Presentation: All features enabled
+- ✅ Error handling: Fallback and logging active
+
+**If validation fails:**
+- Display error message via question tool
+- Offer fallback options (manual entry, skip questions)
+- Log the failure for debugging
+
 For each finding, determine:
 
 | Target Type | Where to Put It |
@@ -92,6 +128,39 @@ For each finding, determine:
 | Pipeline/flow documentation | Context file in `agents/context/` |
 | Visual patterns, design systems | `visual-companion/SKILL.md` |
 | Schema/decision knowledge | Wiki via `wiki_submit` |
+
+### Phase 3.1: Question Tool Integration Validation
+
+After Cross-Reference, integrate the question tool into the workflow:
+
+```bash
+# Validate question tool is working
+python3 ~/.config/opencode/scripts/validate-question-tool.py --validate
+
+# Get question tool status
+python3 ~/.config/opencode/scripts/validate-question-tool.py --status
+
+# Initialize question tool session
+python3 ~/.config/opencode/scripts/validate-question-tool.py --init --session "update-analysis"
+```
+
+**Validation Criteria:**
+- ✅ Config loaded successfully
+- ✅ Timeout settings active
+- ✅ Retry mechanism working
+- ✅ Validation rules configured
+- ✅ Presentation settings active
+- ✅ Error handling enabled
+
+**If validation fails:**
+```
+python3 ~/.config/opencode/scripts/validate-question-tool.py --fallback-mode
+```
+
+This provides fallback options:
+- Manual entry via simple questions
+- Skip questions (continue with basic analysis)
+- Log failure for later review
 
 ## Phase 4: Compile Proposals
 

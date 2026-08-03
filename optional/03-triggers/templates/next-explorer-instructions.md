@@ -31,7 +31,7 @@ Display as markdown list of clickable links
 
 Paths are mapped to URLs using these rules:
 - `${OPENCODE_CONFIG_DIR}/` → volume `opencode`
-- `${ASTRO_BLOG_DIR:-/media/docker/astro-blog}/` → volume `docker`
+- `${ASTRO_BLOG_DIR:-${ASTRO_BLOG_DIR}}/` → volume `docker`
 - All other paths → volume `storage`
 
 Configure volume mappings in `.env` as `NEXTEXPLORER_VOLUMES` (comma-separated `prefix:volume-name` pairs).

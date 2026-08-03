@@ -13,7 +13,7 @@ When the user types this trigger, follow the phases below.
 
 ### Phase 0
 
-Verify guardian script exists at ${GUARDIAN_SCRIPT:-/usr/local/bin/guardian-status.sh}
+Verify guardian script exists at ${GUARDIAN_SCRIPT:-${GUARDIAN_SCRIPT}}
 
 ### Phase 1
 
@@ -25,7 +25,7 @@ Present menu: Read Report, Improvements, Check Status, Blog Post, Extend Guardia
 
 ## Data Source
 
-The guardian script at `${GUARDIAN_SCRIPT:-/usr/local/bin/guardian-status.sh}` provides:
+The guardian script at `${GUARDIAN_SCRIPT:-${GUARDIAN_SCRIPT}}` provides:
 - `report` — latest logs from all watchers
 - `status` — system health snapshot
 - `improvements` — diagnostic recommendations
