@@ -51,3 +51,5 @@
 | Trigger | Action |
 |---------|--------|
 | `d` or `deferred` | Parked task management — review, resume, bump, archive |
+
+| **Topology** | `topology` | Device mesh awareness — read/update the shared TOPOLOGY.md across all your machines (git-synced) | Navigation |
