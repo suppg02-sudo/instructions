@@ -10,19 +10,20 @@
 
 ## How It Works
 
-We maintain **2 MCP servers on vm** and **2 on ubuntu4**. Each machine
-typically wants the **other** machine's servers — so a vm user wants the 2
-ubuntu4 MCPs, and an ubuntu4 user wants the 2 vm MCPs.
+Each host exposes **2 second-brain-flavoured MCP servers**. A machine typically
+wants the **other** host's servers — so a vm user wants ubuntu4's 2, and an
+ubuntu4 user wants vm's 2. The drives are the same on both boxes: one server is
+**knowledge oriented**, the other is **skills / context oriented**.
 
-| Host | MCP server | Endpoint | Auth |
-|------|-----------|----------|------|
-| **vm** (`192.168.2.177`) | `secondbrain` (local stdio, from `~/second-brain`) | local stdio: `uv run python -m secondbrain.mcp_server` | none (local) |
-| **vm** (`192.168.2.177`) | `secondbrain-net` (remote) | `http://192.168.2.177:8130/mcp` | none (LAN) |
-| **ubuntu4** (`192.168.1.48`) | `agent-wiki` | `http://192.168.1.48:8908/mcp` | Bearer token |
-| **ubuntu4** (`192.168.1.48`) | `agent-runtime` | `http://192.168.1.48:8914/mcp` | Bearer token |
+| Host | Server | Orientation | Endpoint | Auth |
+|------|--------|------------|----------|------|
+| **vm** (`192.168.2.177`) | `secondbrain` | **Knowledge** (ingest/search/retrieve the graph) | `http://192.168.2.177:8130/mcp` (Streamable HTTP; legacy `/sse` also available) · local stdio `uv run python -m secondbrain.mcp_server` | none (LAN) |
+| **vm** (`192.168.2.177`) | `secondbrain-skills` | **Skills / context** (list/get/select the opencode skills) | `http://192.168.2.177:8131/sse` (legacy SSE) | none (LAN) |
+| **ubuntu4** (`192.168.1.48`) | `agent-wiki` | **Knowledge** (wiki pages store) | `http://192.168.1.48:8908/mcp` | Bearer token |
+| **ubuntu4** (`192.168.1.48`) | `agent-runtime` | **Skills / context** (rules, triggers, skills, context, agent defs) | `http://192.168.1.48:8914/mcp` | Bearer token |
 
-Remote endpoint details + tokens live in the sibling guides (`ubuntu4agentwikimcp.md`,
-`ubuntu4agentruntimemcp.md`, `vm-mcp-skills.md`).
+Remote endpoint details + tokens live in the sibling guides
+(`ubuntu4agentwikimcp.md`, `ubuntu4agentruntimemcp.md`, `vm-mcp-skills.md`).
 
 ---
 
@@ -37,7 +38,7 @@ hostname   # → "vm" or "ubuntu4"
 - On **vm** → the typical install is the **2 ubuntu4 MCPs** (`agent-wiki` +
   `agent-runtime`).
 - On **ubuntu4** → the typical install is the **2 vm MCPs** (`secondbrain` +
-  `secondbrain-net`).
+  `secondbrain-skills`).
 - Confirm against `/etc/hostname` if `hostname` is ambiguous.
 
 ---
@@ -51,17 +52,17 @@ an **Exit / Do nothing** option. **Never hand-craft question JSON.**
 Example question for a **vm** user:
 
 - **Install ubuntu4 MCPs (agent-wiki + agent-runtime)** `(Recommended)`
-- **Install only agent-wiki**
-- **Install only agent-runtime**
-- **Install vm MCPs (secondbrain + secondbrain-net)** (unusual on vm)
+- **Install only agent-wiki** (knowledge)
+- **Install only agent-runtime** (skills / context)
+- **Install local vm MCPs (secondbrain + secondbrain-skills)** (unusual on vm)
 - **Exit — no changes**
 
 For an **ubuntu4** user, mirror the options:
 
-- **Install vm MCPs (secondbrain + secondbrain-net)** `(Recommended)`
-- **Install only secondbrain** (local stdio)
-- **Install only secondbrain-net**
-- **Install ubuntu4 MCPs (agent-wiki + agent-runtime)**
+- **Install vm MCPs (secondbrain + secondbrain-skills)** `(Recommended)`
+- **Install only secondbrain** (knowledge)
+- **Install only secondbrain-skills** (skills / context)
+- **Install ubuntu4 local MCPs (agent-wiki + agent-runtime)**
 - **Exit — no changes**
 
 Selecting an option is the trigger to perform the corresponding install below.
@@ -74,23 +75,33 @@ Edit **`~/.config/opencode/opencode.jsonc`**, adding/updating entries under the
 existing `"mcp"` object. Preserve `$schema` and all existing fields. `type` is
 required; `command` is an array of strings.
 
-### vm MCPs
+### vm MCPs (knowledge + skills)
 
 ```jsonc
 "secondbrain": {
-  "type": "local",
-  "command": ["uv", "--directory", "/home/paul/second-brain", "run", "python", "-m", "secondbrain.mcp_server"],
-  "timeout": 30000,
-  "enabled": true
-},
-"secondbrain-net": {
   "type": "remote",
   "url": "http://192.168.2.177:8130/mcp",
+  "enabled": true
+},
+"secondbrain-skills": {
+  "type": "remote",
+  "url": "http://192.168.2.177:8131/sse",
   "enabled": true
 }
 ```
 
-### ubuntu4 MCPs
+> If installed on **vm itself** (local), prefer the stdio form for
+> `secondbrain` instead of `remote`:
+> ```jsonc
+> "secondbrain": {
+>   "type": "local",
+>   "command": ["uv", "--directory", "/home/paul/second-brain", "run", "python", "-m", "secondbrain.mcp_server"],
+>   "timeout": 30000,
+>   "enabled": true
+> }
+> ```
+
+### ubuntu4 MCPs (knowledge + skills / context)
 
 ```jsonc
 "agent-wiki": {
@@ -117,7 +128,7 @@ required; `command` is an array of strings.
 
 1. Confirm `"enabled": true` and correct `"url"` for each added server.
 2. For remote servers, hit `/health` or run the initialize probe from the
-   guide to confirm reachability.
+   relevant guide to confirm reachability.
 3. Tell the user to **quit and restart opencode** so the new MCP config loads
    (config is not hot-reloaded).
 
@@ -125,5 +136,5 @@ required; `command` is an array of strings.
 
 ## Phase 4 — Report
 
-List which servers were installed/enabled, the endpoint each points at, and
-remind the user to restart opencode.
+List which servers were installed/enabled, the endpoint and orientation
+(knowledge vs skills) of each, and remind the user to restart opencode.
