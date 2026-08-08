@@ -35,6 +35,8 @@ TRIGGERS=(
   "cron-instructions.md:cron"
   "space-instructions.md:space"
   "svg-instructions.md:svg"
+  "urls-instructions.md:urls"
+  "dashboard-instructions.md:>d"
 )
 
 install() {

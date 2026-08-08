@@ -25,6 +25,8 @@ Triggers let you type 1-3 characters to get complex, consistent behaviour — no
 | Visual Companion | `vc`, `visual-companion` | Browser-based diagram generation | Creative |
 | Cron | `cron` | View, edit, monitor scheduled tasks | Operations |
 | Space | `space`, `sp` | Disk space analysis and cleanup | Operations |
+| Dashboard | `>d`, `>dash`, `>dashboard` | Add a new icon to the service dashboard linked to a URL (infer from session; ask only if unclear) | Operations |
+| URLs | `urls` | Check which web servers are running, list URLs as http://vm links | Operations |
 | SVG | `svg`, `diagram` | Publication-ready SVG diagrams from natural language | Creative |
 
 ## Installation
