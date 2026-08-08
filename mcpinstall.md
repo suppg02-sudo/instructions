@@ -118,9 +118,16 @@ required; `command` is an array of strings.
 }
 ```
 
-> **Tokens**: pull the real token from the remote host's secret env, e.g.
-> `grep WIKI_MCP_TOKEN /root/.secrets/wiki_mcp.env` (run on ubuntu4), then
-> substitute into the header. Never commit the literal token to this repo.
+> **Tokens**: vm has **root SSH access to ubuntu4** (`root@192.168.1.48`, ed25519
+> key in `~/.ssh/id_ed25519`), so the agent can fetch them directly:
+> ```bash
+> ssh root@192.168.1.48 "grep WIKI_MCP_TOKEN /root/.secrets/wiki_mcp.env; grep RUNTIME_MCP_TOKEN /root/.secrets/agent_runtime_mcp.env"
+> ```
+> Then substitute into the header. Never commit the literal token to this repo.
+> On vm the config stores them via `{env:WIKI_MCP_TOKEN}` / `{env:RUNTIME_MCP_TOKEN}`
+> resolved from `~/.config/opencode/.env` (chmod 600), so the raw values never
+> sit in `opencode.jsonc`. **(Reverse)** ubuntu4 also has SSH access to vm; see
+> the SSH section below.
 
 ---
 
@@ -138,3 +145,19 @@ required; `command` is an array of strings.
 
 List which servers were installed/enabled, the endpoint and orientation
 (knowledge vs skills) of each, and remind the user to restart opencode.
+
+---
+
+## SSH between vm and ubuntu4
+
+Passwordless SSH is set up **both directions**, so `mcpinstall` and token
+fetching work automatically from either box:
+
+- **vm → ubuntu4:** `ssh root@192.168.1.48`
+  (vm key `~/.ssh/id_ed25519` is in `/root/.ssh/authorized_keys` on ubuntu4)
+- **ubuntu4 → vm:** `ssh <vm-user>@192.168.2.177`
+  (ubuntu4's root key is in `<vm-user>/.ssh/authorized_keys` on vm)
+
+> If `ssh root@192.168.1.48` fails with `Permission denied (publickey)`, the
+> `VM_…` key may have been added under the wrong user on ubuntu4 (it must be
+> root's `/root/.ssh/authorized_keys`, since the login user there is `root`).
