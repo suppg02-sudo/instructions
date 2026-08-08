@@ -25,6 +25,13 @@ ubuntu4 user wants vm's 2. The drives are the same on both boxes: one server is
 Remote endpoint details + tokens live in the sibling guides
 (`ubuntu4agentwikimcp.md`, `ubuntu4agentruntimemcp.md`, `vm-mcp-skills.md`).
 
+> **Current real state (2026-08-08):** on **vm**, `agent-wiki` + `agent-runtime`
+> are already installed in `~/.config/opencode/opencode.jsonc` (Bearer via
+> `{env:WIKI_MCP_TOKEN}` / `{env:RUNTIME_MCP_TOKEN}` from
+> `~/.config/opencode/.env`), alongside the local `secondbrain` stdio entry. The
+> question-tool menu below is therefore mostly relevant for other boxes or when
+> re-adding/re-enabling servers.
+
 ---
 
 ## Phase 0 — Detect the current host
