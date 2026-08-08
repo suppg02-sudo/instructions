@@ -37,7 +37,10 @@ bash optional/03-triggers/scripts/install.sh --verify
 | **Visual Companion** | `vc`, `visual-companion` | Browser-based diagram generation | Creative |
 | **Cron** | `cron` | View, edit, monitor scheduled tasks | Operations |
 | **Space** | `space`, `sp` | Disk space analysis and cleanup | Operations |
+| **Dashboard** | `>d`, `>dash`, `>dashboard` | Add a new icon to the service dashboard linked to a URL (infer from session; ask only if unclear) | Operations |
+| **URLs** | `urls` | Check which web servers are running, list URLs as http://vm links | Operations |
 | **SVG** | `svg`, `diagram` | Publication-ready SVG diagrams from natural language | Creative |
+| **MCP Install** | `mcpinstall` | Interactive install of the shared MCP servers (vm ⇄ ubuntu4) via question tool, cross-machine by default | Operations |
 
 ## Repo Structure
 
@@ -47,7 +50,7 @@ instructions/
 ├── README.md                        ← Human-readable overview
 │
 └── optional/
-    └── 03-triggers/                 ← Word-activated command protocols (16 triggers)
+    └── 03-triggers/                 ← Word-activated command protocols (17 triggers)
         ├── SKILL.md                 ← Trigger skill documentation
         ├── scripts/
         │   └── install.sh           ← Installation script
@@ -68,6 +71,7 @@ instructions/
             ├── visual-companion-instructions.md
             ├── cron-instructions.md
             ├── space-instructions.md
+            ├── dashboard-instructions.md
             └── svg-instructions.md
 ```
 
@@ -98,6 +102,7 @@ These rules define how the agent should behave when working on this repo:
 - Don't auto-load skills unless triggered by user intent
 - Don't use `fetch` when `web_search`/`browser`/`mcp` is available
 - Don't ignore local or MCP-available tools in favour of remote alternatives
+- Don't use `knowledge_research` (the Second Brain research pipeline) for simple factual look-up queries — it is a heavy search→fetch→summarize→ingest pipeline that writes notes into the knowledge graph. Prefer a plain web search / `webfetch` and answer in chat; reach for `knowledge_research` only when the user wants to persist a topic into the second brain or explicitly asks to research/save it.
 
 ## Source
 
