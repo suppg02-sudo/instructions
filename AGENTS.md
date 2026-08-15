@@ -42,6 +42,7 @@ bash optional/03-triggers/scripts/install.sh --verify
 | **SVG** | `svg`, `diagram` | Publication-ready SVG diagrams from natural language | Creative |
 | **MCP Install** | `mcpinstall` | Interactive install of the shared MCP servers (vm ⇄ ubuntu4) via question tool, cross-machine by default | Operations |
 | **Topology** | `topology` | Device mesh awareness — read/update the shared TOPOLOGY.md (github.com/suppg02-sudo/topology) across all machines, git-synced | Navigation |
+ | **Agent Check** | `agent-check`, `check agents` | Universal per-agent health/preflight checklist (opencode, librechat, nao) — static + live layers via `agent-check.py --agent X` (see `skills/agent-check` in the topology repo) | Operations |
 
 ## Repo Structure
 
