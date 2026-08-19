@@ -37,6 +37,7 @@
 | `space` or `sp` | Disk space analysis and cleanup |
 | `urls` | Check which web servers are running, flag expected-but-down, list URLs as http://vm links |
 | `>d` or `>dash` or `>dashboard` | Add a new icon to the service dashboard linked to a URL (infer from session; ask only if unclear) |
+| `>brain` | Save current session/topic to Second Brain knowledge graph |
 | `mcpinstall` | Interactive install of the shared MCP servers (vm ⇄ ubuntu4) — question-tool menu, cross-machine by default |
 
 ## Navigation
