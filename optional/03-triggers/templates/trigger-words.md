@@ -53,6 +53,6 @@
 |---------|--------|
 | `d` or `deferred` | Parked task management — review, resume, bump, archive |
 
-| **Topology** | `topology` | Device mesh awareness — read/update the shared TOPOLOGY.md across all your machines (git-synced); on enroll, creates a per-node git repo for automated backup of AGENTS.md, intent.md, config, OKF exports | Navigation |
+| **Topology** | `topology` | Align with central topology (auto-sync, drift detect, converge), then manage device mesh via menu | Navigation |
 
 | **Agent Check** | `agent-check`, `check agents` | Universal per-agent health/preflight checklist (opencode, librechat, nao) — static + live layers, run via `agent-check.py --agent X` | Operations |
