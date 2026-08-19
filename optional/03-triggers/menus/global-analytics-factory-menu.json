@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Analytics Factory menu domain options — board lifecycle management",
+  "updated": "2026-07-23",
+  "static": [
+    {
+      "id": "status",
+      "label": "📊 Status",
+      "description": "Live board health (pid + port probe)"
+    },
+    {
+      "id": "new-board",
+      "label": "🏗️ New Board",
+      "description": "Create board from instance + templates"
+    },
+    {
+      "id": "validate",
+      "label": "✅ Validate",
+      "description": "Pydantic + metric contract checks"
+    },
+    {
+      "id": "doctor",
+      "label": "🩺 Doctor",
+      "description": "Probe ports, restart dead boards, fix drift"
+    },
+    {
+      "id": "snapshot",
+      "label": "📸 Snapshot",
+      "description": "Tar instance + board to history/snapshots/"
+    },
+    {
+      "id": "open-cron-jobs",
+      "label": "⏰ Open Cron Jobs",
+      "description": "Cron Jobs dashboard (8925)"
+    }
+  ]
+}

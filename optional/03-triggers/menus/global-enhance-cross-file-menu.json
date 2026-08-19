@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Enhance Cross File menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "exploration-agent",
+      "label": "exploration-agent",
+      "description": "Uses Write but not in tools list"
+    },
+    {
+      "id": "workflowmd",
+      "label": "workflow.md",
+      "description": "References nonexistent agent"
+    },
+    {
+      "id": "never-push-force",
+      "label": "\"NEVER push --force\"",
+      "description": "4 files"
+    },
+    {
+      "id": "category",
+      "label": "Category",
+      "description": "Patterns"
+    }
+  ]
+}

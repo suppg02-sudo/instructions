@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Skill menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-04",
+
+  "static": [
+    {"id": "create", "label": "✨ Create Skill", "description": "New skill workflow"},
+    {"id": "update", "label": "📝 Update Skill", "description": "Modify existing skill"},
+    {"id": "validate", "label": "✅ Validate", "description": "Quality gates & checks"}
+  ],
+
+  "phase_specific": {
+    "improve": [{"id": "improve", "label": "📈 Improve", "description": "Usage patterns & fixes"}],
+    "diagnose": [{"id": "diagnose", "label": "🩺 Diagnose", "description": "Health checks"}],
+    "research": [{"id": "download", "label": "🔍 Research", "description": "Find & download skills"}]
+  }
+}

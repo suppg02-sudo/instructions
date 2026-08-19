@@ -47,6 +47,12 @@ TRIGGERS=(
   "topology-instructions.md:topology"
 )
 
+# Menu files to symlink from instructions repo (all global-*-menu.json)
+MENU_FILES=()
+while IFS= read -r -d '' file; do
+    MENU_FILES+=("$(basename "$file")")
+done < <(find "$PHASE_DIR/menus" -name 'global-*-menu.json' -print0 2>/dev/null)
+
 # Shell config detection
 detect_shell_config() {
     if [ -n "${ZSH_VERSION:-}" ] || [ "$(basename "$SHELL")" = "zsh" ]; then
@@ -82,6 +88,39 @@ install_topology_cli() {
     fi
     
     echo "  ✓ topology CLI installed to $bin_dir/topology"
+}
+
+# Auto-enroll in topology mesh if GITHUB_TOKEN is available
+install_menus() {
+    echo "[triggers] Installing menu system from instructions repo..."
+    
+    local menu_rules_dir="$OPENCODE_CONFIG/skills/menu-factory/rules"
+    mkdir -p "$menu_rules_dir"
+    
+    local menus_dir="$PHASE_DIR/menus"
+    if [ ! -d "$menus_dir" ]; then
+        echo "  [WARN] Menus directory not found at $menus_dir — skipping"
+        return 1
+    fi
+    
+    local installed=0
+    for menu in "${MENU_FILES[@]}"; do
+        local src="$menus_dir/$menu"
+        local dst="$menu_rules_dir/$menu"
+        
+        if [ -f "$src" ]; then
+            # Remove existing file/symlink
+            rm -f "$dst"
+            # Symlink from instructions repo
+            ln -sf "$src" "$dst"
+            echo "  ✓ $menu (symlinked)"
+            installed=$((installed + 1))
+        else
+            echo "  [WARN] Menu not found: $src"
+        fi
+    done
+    
+    echo "  Installed $installed menu files"
 }
 
 # Auto-enroll in topology mesh if GITHUB_TOKEN is available
@@ -144,6 +183,10 @@ install() {
   echo ""
   echo "[triggers] Installing topology CLI..."
   install_topology_cli
+
+  # Install menu system from instructions repo
+  echo ""
+  install_menus
 
   # Auto-enroll in topology mesh (if GITHUB_TOKEN available)
   echo ""

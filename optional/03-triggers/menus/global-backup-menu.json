@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Backup menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "status",
+      "label": "📊 Status",
+      "description": "Check all backup freshness and sizes"
+    },
+    {
+      "id": "run-backup",
+      "label": "▶️ Run backup",
+      "description": "Execute a specific backup now"
+    },
+    {
+      "id": "restore",
+      "label": "🔄 Restore",
+      "description": "Restore from a backup"
+    },
+    {
+      "id": "verify",
+      "label": "🔍 Verify",
+      "description": "Run restore test or staleness check"
+    },
+    {
+      "id": "configure",
+      "label": "📝 Configure",
+      "description": "Change schedule, retention, or…"
+    }
+  ]
+}

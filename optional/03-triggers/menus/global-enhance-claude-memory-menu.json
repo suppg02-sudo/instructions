@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Enhance Claude Memory menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "claudeclaudemd",
+      "label": "`~/.claude/CLAUDE.md`",
+      "description": "Global (all projects)"
+    },
+    {
+      "id": "claudeclaudemd-or-claudemd",
+      "label": "`.claude/CLAUDE.md` or `./CLAUDE.md`",
+      "description": "Project root"
+    },
+    {
+      "id": "srcclaudeclaudemd",
+      "label": "`src/.claude/CLAUDE.md`",
+      "description": "Directory-specific"
+    },
+    {
+      "id": "configopencodeagentsmd-or-codexagentsmd",
+      "label": "`~/.config/opencode/AGENTS.md` or `~/.codex/AGENTS.md`",
+      "description": "Global (all projects)"
+    },
+    {
+      "id": "opencodeagentsmd-or-agentsmd",
+      "label": "`.opencode/AGENTS.md` or `./AGENTS.md`",
+      "description": "Project root"
+    },
+    {
+      "id": "srcagentsmd",
+      "label": "`src/AGENTS.md`",
+      "description": "Directory-specific"
+    },
+    {
+      "id": "estimated-tokens",
+      "label": "Estimated Tokens",
+      "description": "{tokens}"
+    },
+    {
+      "id": "readme-overlap",
+      "label": "README Overlap",
+      "description": "{percent}%"
+    }
+  ]
+}

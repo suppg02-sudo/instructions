@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Litellm menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "check-status-recommended",
+      "label": "Check Status (Recommended)",
+      "description": "Container health, port 4000, Ollama"
+    },
+    {
+      "id": "view-capabilities",
+      "label": "View Capabilities",
+      "description": "Model capability scorecard"
+    },
+    {
+      "id": "run-benchmark",
+      "label": "Run Benchmark",
+      "description": "Re-run 8-probe capability battery"
+    },
+    {
+      "id": "edit-config",
+      "label": "Edit Config",
+      "description": "Open config.yaml with YAML validation"
+    },
+    {
+      "id": "restart-router",
+      "label": "Restart Router",
+      "description": "Restart the production litellm container"
+    },
+    {
+      "id": "diagnose-unhealthy",
+      "label": "Diagnose Unhealthy",
+      "description": "Fix unhealthy endpoints, broken models"
+    },
+    {
+      "id": "exit",
+      "label": "Exit",
+      "description": "Return to previous context"
+    },
+    {
+      "id": "litellm",
+      "label": "Litellm",
+      "description": "Full management menu"
+    }
+  ]
+}

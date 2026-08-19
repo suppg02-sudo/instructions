@@ -1,0 +1,36 @@
+{
+  "static": [
+    {
+      "label": "Publish Blog Post (Recommended)",
+      "description": "Publish a markdown file to Directus + rebuild Astro + verify + podcastify"
+    },
+    {
+      "label": "Rebuild & Restart Astro",
+      "description": "Build static site and restart container to serve new posts"
+    },
+    {
+      "label": "Verify Post Renders (HTTP 200)",
+      "description": "Check a specific slug returns 200 on local Astro (port 3002)"
+    },
+    {
+      "label": "Netlify Deploy",
+      "description": "Build static + deploy to Netlify (techstack-blog mirror)"
+    },
+    {
+      "label": "Directus: List Recent Posts",
+      "description": "Show last 10 posts from Directus CMS"
+    },
+    {
+      "label": "Directus: Check Post by Slug",
+      "description": "Verify a post exists and get its ID/fields"
+    },
+    {
+      "label": "Astro Container Logs",
+      "description": "View recent astro-blog container logs"
+    },
+    {
+      "label": "Podcastify: Generate & Attach",
+      "description": "Generate narration for a post and attach to Directus"
+    }
+  ]
+}

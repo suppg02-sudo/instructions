@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Agents Factory menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "improve-agent",
+      "label": "Improve Agent",
+      "description": "Analyze patterns, propose improvements"
+    },
+    {
+      "id": "harness-review",
+      "label": "Harness Review",
+      "description": "Check harness against quality principles"
+    },
+    {
+      "id": "duplicate-agent",
+      "label": "Duplicate Agent",
+      "description": "Clone with modifications"
+    },
+    {
+      "id": "view-agent-details",
+      "label": "View Agent Details",
+      "description": "Full YAML inspection"
+    },
+    {
+      "id": "open-skill-factory",
+      "label": "Open Skill Factory",
+      "description": "Create related skill"
+    },
+    {
+      "id": "back",
+      "label": "Back",
+      "description": "Return to main menu"
+    }
+  ]
+}

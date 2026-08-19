@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Monitor menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "telemetry-health",
+      "label": "📊 Telemetry Health",
+      "description": "Check all monitoring services"
+    },
+    {
+      "id": "performance-snapshot",
+      "label": "🔍 Performance Snapshot",
+      "description": "Quick system metrics"
+    },
+    {
+      "id": "performance-blog-post",
+      "label": "📝 Performance Blog Post",
+      "description": "Generate & publish perf report"
+    },
+    {
+      "id": "start-watch",
+      "label": "⏱️ Start Watch",
+      "description": "Continuous monitoring"
+    },
+    {
+      "id": "swap-management",
+      "label": "🔄 Swap Management",
+      "description": "Swap status and flush"
+    },
+    {
+      "id": "monitor",
+      "label": "Monitor",
+      "description": "Full monitoring menu"
+    }
+  ]
+}

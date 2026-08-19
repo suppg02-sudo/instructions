@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Flow menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "category",
+      "label": "Category",
+      "description": "Characteristics"
+    },
+    {
+      "id": "conversational",
+      "label": "Conversational",
+      "description": "Multi-turn dialogue, clarifications…"
+    },
+    {
+      "id": "direct-task",
+      "label": "Direct Task",
+      "description": "Single request, clear requirements"
+    },
+    {
+      "id": "complex-multi-step",
+      "label": "Complex Multi-Step",
+      "description": "Multiple phases, coordination needed"
+    },
+    {
+      "id": "research-heavy",
+      "label": "Research-Heavy",
+      "description": "Information gathering, external sources"
+    },
+    {
+      "id": "troubleshooting",
+      "label": "Troubleshooting",
+      "description": "Error diagnosis, iterative fixing"
+    },
+    {
+      "id": "indicator-type",
+      "label": "Indicator Type",
+      "description": "What It Detects"
+    },
+    {
+      "id": "context-skipping",
+      "label": "Context Skipping",
+      "description": "Not reading required documentation"
+    }
+  ]
+}

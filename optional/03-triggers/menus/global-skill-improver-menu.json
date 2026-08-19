@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Skill Improver menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "source",
+      "label": "Source",
+      "description": "Location"
+    },
+    {
+      "id": "skill-history",
+      "label": "Skill History",
+      "description": "`~/.config/opencode/skills/*/history/`"
+    },
+    {
+      "id": "quality-gate-failures",
+      "label": "Quality Gate Failures",
+      "description": "`~/.config/opencode/scripts/quality-gate…"
+    },
+    {
+      "id": "cron-logs",
+      "label": "Cron Logs",
+      "description": "`~/cron-logs/`"
+    },
+    {
+      "id": "postgresql-memory",
+      "label": "PostgreSQL Memory",
+      "description": "`pghmem`"
+    },
+    {
+      "id": "skill-logs",
+      "label": "Skill Logs",
+      "description": "`~/.config/opencode/logs/`"
+    },
+    {
+      "id": "plan-files",
+      "label": "Plan Files",
+      "description": "`PLAN.md`, `docs/plans/`"
+    },
+    {
+      "id": "cross-skill-files",
+      "label": "Cross-Skill Files",
+      "description": "`~/.config/opencode/skills/*/`"
+    }
+  ],
+  "phase_specific": {
+    "phases": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "3.0.0",
+  "description": "Research menu domain options — consolidated 3 options (signal-driven, 2026-05-19)",
+  "updated": "2026-05-19",
+
+  "static": [
+    {"id": "new", "label": "New Research", "description": "Start fresh or interactive session", "recommended": true},
+    {"id": "active", "label": "Active Tasks", "description": "PG-backed sessions + resume"},
+    {"id": "knowledge_store", "label": "Query Knowledge", "description": "Search knowledge_store + pghmem"}
+  ],
+
+  "removed": {
+    "reason": "Zero selections across 20+ presentations — signal data confirms dead options",
+    "items": [
+      {"id": "interactive", "label": "Interactive Mode", "merged_into": "new", "note": "Now --mode B param on New Research"},
+      {"id": "resume", "label": "Resume Session", "merged_into": "active", "note": "Active Tasks shows PG sessions with resume"},
+      {"id": "memory", "label": "Memory Search", "merged_into": "knowledge_store", "note": "Combined into Query Knowledge"},
+      {"id": "history", "label": "History", "presents": 3, "selects": 0},
+      {"id": "tools", "label": "Tools", "presents": 0, "selects": 0}
+    ]
+  }
+}

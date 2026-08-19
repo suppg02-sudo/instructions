@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "version": "1.0.0",
+    "description": "Skill Factory menu options — domain options for build_menu.py",
+    "updated": "2026-05-16",
+    "static": [
+        {
+            "id": "create",
+            "label": "Create Skill",
+            "description": "New skill from template or scratch",
+            "recommended": true
+        },
+        {
+            "id": "update",
+            "label": "Update Skill",
+            "description": "Edit existing skill structure"
+        },
+        {
+            "id": "validate",
+            "label": "Validate Skill",
+            "description": "Check skill quality and compliance"
+        },
+        {
+            "id": "discovery",
+            "label": "Skill Discovery",
+            "description": "Analyse skill maturity and gaps"
+        }
+    ]
+}

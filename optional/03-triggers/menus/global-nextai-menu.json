@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Nextai menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "check-status-recommended",
+      "label": "Check Status (Recommended)",
+      "description": "Container health, port 6002, LiteLLM"
+    },
+    {
+      "id": "configure-models",
+      "label": "Configure Models",
+      "description": "Set up multi-model config"
+    },
+    {
+      "id": "setup-nginx-proxy",
+      "label": "Setup Nginx Proxy",
+      "description": "Reverse proxy with domain + SSL"
+    },
+    {
+      "id": "restart-container",
+      "label": "Restart Container",
+      "description": "Restart the next-ai-draw-io container"
+    },
+    {
+      "id": "view-logs",
+      "label": "View Logs",
+      "description": "Show recent container logs"
+    },
+    {
+      "id": "exit",
+      "label": "Exit",
+      "description": "Return to previous context"
+    },
+    {
+      "id": "nextai",
+      "label": "Nextai",
+      "description": "Full management menu"
+    }
+  ]
+}

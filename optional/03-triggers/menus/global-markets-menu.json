@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Markets Crisis Scan dashboard menu options",
+  "updated": "2026-07-27",
+  "static": [
+    {
+      "id": "run",
+      "label": "Run Analysis",
+      "description": "Run crisis signal scan and read narrated output"
+    },
+    {
+      "id": "open",
+      "label": "Open Dashboard",
+      "description": "Open markets dashboard in browser (port 8928)"
+    },
+    {
+      "id": "status",
+      "label": "Status",
+      "description": "Check server health and last analysis results"
+    },
+    {
+      "id": "rebuild",
+      "label": "Rebuild Board",
+      "description": "Rebuild dashboard artifacts from analysis module"
+    },
+    {
+      "id": "restart",
+      "label": "Restart Server",
+      "description": "Kill and restart the board server"
+    },
+    {
+      "id": "edit-assets",
+      "label": "Edit Assets",
+      "description": "Add or remove tracked assets from analysis.py"
+    }
+  ]
+}

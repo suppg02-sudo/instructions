@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Enhance Plugins menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "platform",
+      "label": "Platform",
+      "description": "Location"
+    },
+    {
+      "id": "claude-code",
+      "label": "Claude Code",
+      "description": "`plugins/*/`, `.claude-plugin/plugin.jso…"
+    },
+    {
+      "id": "opencode",
+      "label": "OpenCode",
+      "description": "`.opencode/plugins/`, MCP in…"
+    },
+    {
+      "id": "codex",
+      "label": "Codex",
+      "description": "MCP in `~/.codex/config.toml`"
+    },
+    {
+      "id": "issue",
+      "label": "Issue",
+      "description": "Certainty"
+    },
+    {
+      "id": "missing-param-descriptions",
+      "label": "Missing param descriptions",
+      "description": "MEDIUM"
+    },
+    {
+      "id": "vague-names-search-process",
+      "label": "Vague names (`search`, `process`)",
+      "description": "MEDIUM"
+    }
+  ]
+}

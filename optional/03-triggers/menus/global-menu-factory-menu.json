@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Menu Factory menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "validate",
+      "label": "Validate",
+      "description": "Check menu compliance"
+    },
+    {
+      "id": "audit-all",
+      "label": "Audit All",
+      "description": "Audit every skill menu"
+    },
+    {
+      "id": "optimize",
+      "label": "Optimize",
+      "description": "Run optimizer on all skills"
+    },
+    {
+      "id": "coverage",
+      "label": "Coverage",
+      "description": "Check stale globals coverage"
+    },
+    {
+      "id": "mf",
+      "label": "Mf",
+      "description": "menu factory workflow"
+    }
+  ]
+}

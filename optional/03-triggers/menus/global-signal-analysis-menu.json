@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Signal Analysis menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "category",
+      "label": "Category",
+      "description": "Events"
+    },
+    {
+      "id": "menu",
+      "label": "menu",
+      "description": "present, select, defer, error, timeout"
+    },
+    {
+      "id": "skill",
+      "label": "skill",
+      "description": "invoke, complete, error, abort, duration"
+    },
+    {
+      "id": "agent",
+      "label": "agent",
+      "description": "dispatch, complete, error, timeout…"
+    },
+    {
+      "id": "schema",
+      "label": "schema",
+      "description": "validate, migrate, error, drift"
+    },
+    {
+      "id": "flow",
+      "label": "flow",
+      "description": "start, step, complete, error, retry"
+    },
+    {
+      "id": "pipeline",
+      "label": "pipeline",
+      "description": "start, complete, error, duration…"
+    },
+    {
+      "id": "service",
+      "label": "service",
+      "description": "health, alert, restart, error"
+    }
+  ]
+}

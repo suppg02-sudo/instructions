@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Open Design menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "od",
+      "label": "Od",
+      "description": "Shortcut for open-design."
+    },
+    {
+      "id": "containers",
+      "label": "Containers",
+      "description": "For managing the Open Design Docker…"
+    }
+  ]
+}

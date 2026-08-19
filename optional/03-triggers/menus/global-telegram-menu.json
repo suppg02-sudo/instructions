@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Telegram menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "401-unauthorized",
+      "label": "`401 Unauthorized`",
+      "description": "Invalid bot token"
+    },
+    {
+      "id": "400-bad-request-chat-not-found",
+      "label": "`400 Bad Request: chat not found`",
+      "description": "Wrong chat ID or bot not started"
+    },
+    {
+      "id": "409-conflict",
+      "label": "`409 Conflict`",
+      "description": "Multiple bot instances polling"
+    },
+    {
+      "id": "429-too-many-requests",
+      "label": "`429 Too Many Requests`",
+      "description": "Rate limited"
+    },
+    {
+      "id": "bot-doesnt-respond",
+      "label": "Bot doesn't respond",
+      "description": "Bot not running or wrong mode"
+    },
+    {
+      "id": "messages-not-received",
+      "label": "Messages not received",
+      "description": "Webhook/polling conflict"
+    },
+    {
+      "id": "markdown-parse-error",
+      "label": "Markdown parse error",
+      "description": "Invalid markdown syntax"
+    },
+    {
+      "id": "endpoint",
+      "label": "Endpoint",
+      "description": "Method"
+    }
+  ]
+}

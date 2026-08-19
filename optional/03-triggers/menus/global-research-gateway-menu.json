@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Research gateway menu — groups research-family skills into a single presentation menu. Does not register new triggers; direct tokens keep resolving normally.",
+  "updated": "2026-07-11",
+  "static": [
+    {"id": "research", "label": "Deep Research", "description": "Evidence-led investigation"},
+    {"id": "attention", "label": "Attention Scan", "description": "Monitor current sources"},
+    {"id": "experiment", "label": "Auto Research", "description": "Run measured experiments"},
+    {"id": "store", "label": "Knowledge Store", "description": "Search saved research"}
+  ]
+}

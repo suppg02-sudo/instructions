@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Roundup menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "full-report-recommended",
+      "label": "📋 Full Report (Recommended)",
+      "description": "Complete 2-day activity report with all…"
+    },
+    {
+      "id": "install-roundup-first-time",
+      "label": "🔧 Install Roundup (First Time)",
+      "description": "Install skill, create cron job at…"
+    },
+    {
+      "id": "activity-summary",
+      "label": "📅 Activity Summary",
+      "description": "Quick overview of recent work and…"
+    },
+    {
+      "id": "skilltrigger-audit",
+      "label": "🔍 Skill/Trigger Audit",
+      "description": "Check for missing updates to skills and…"
+    },
+    {
+      "id": "freshstart-sync-check",
+      "label": "🔄 Freshstart Sync Check",
+      "description": "Compare local files with GitHub…"
+    },
+    {
+      "id": "cron-job-status",
+      "label": "⏰ Cron Job Status",
+      "description": "Review all cron jobs and their recent…"
+    },
+    {
+      "id": "backup-status",
+      "label": "💾 Backup Status",
+      "description": "Check backup health and recent backup…"
+    },
+    {
+      "id": "performance-issues",
+      "label": "⚡ Performance Issues",
+      "description": "System performance, OOM events…"
+    }
+  ]
+}

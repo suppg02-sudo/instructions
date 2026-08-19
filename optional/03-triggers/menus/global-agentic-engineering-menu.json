@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Agentic Engineering menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "operating-principles",
+      "label": "Operating Principles",
+      "description": "Manage operating principles"
+    },
+    {
+      "id": "eval-first-loop",
+      "label": "Eval-First Loop",
+      "description": "Manage eval-first loop"
+    },
+    {
+      "id": "task-decomposition",
+      "label": "Task Decomposition",
+      "description": "Manage task decomposition"
+    },
+    {
+      "id": "model-routing",
+      "label": "Model Routing",
+      "description": "Manage model routing"
+    },
+    {
+      "id": "session-strategy",
+      "label": "Session Strategy",
+      "description": "Manage session strategy"
+    },
+    {
+      "id": "review-focus-for-ai-generated-code",
+      "label": "Review Focus for AI-Generated Code",
+      "description": "Manage review focus for ai-generated…"
+    }
+  ]
+}

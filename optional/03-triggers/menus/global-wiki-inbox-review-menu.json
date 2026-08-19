@@ -1,0 +1,37 @@
+{
+  "static": [
+    {
+      "label": "Analytics",
+      "description": "analytics-factory sessions, dashboard work, metrics, grafana"
+    },
+    {
+      "label": "System",
+      "description": "system-review, maintenance, diagnose, backup, performance, containers"
+    },
+    {
+      "label": "Blog",
+      "description": "blog-capture, astro, podcast, blog posts"
+    },
+    {
+      "label": "Research",
+      "description": "research, attention, geopolitics, scrape, news, knowledge_store, books"
+    },
+    {
+      "label": "Crustal",
+      "description": "crustal-displacement, crustal-research, pole-shift, safe-zones"
+    },
+    {
+      "label": "All Pending",
+      "description": "Review all pending items sequentially"
+    },
+    {
+      "label": "Full Analysis + Blog Post",
+      "description": "Analyze ALL inbox items across categories, generate comprehensive blog post"
+    },
+    {
+      "label": "Exit",
+      "description": "Close review session"
+    }
+  ],
+  "phase_specific": {}
+}

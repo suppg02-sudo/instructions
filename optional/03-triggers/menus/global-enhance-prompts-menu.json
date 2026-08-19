@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Enhance Prompts menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "enhance-prompts",
+      "label": "`enhance-prompts`",
+      "description": "Prompt quality (clarity, structure…"
+    },
+    {
+      "id": "enhance-agent-prompts",
+      "label": "`enhance-agent-prompts`",
+      "description": "Agent config (frontmatter, tools, model)"
+    },
+    {
+      "id": "use-cot",
+      "label": "Use CoT",
+      "description": "Don't Use CoT"
+    },
+    {
+      "id": "complex-multi-step-reasoning",
+      "label": "Complex multi-step reasoning",
+      "description": "Simple factual questions"
+    },
+    {
+      "id": "math-and-logic-problems",
+      "label": "Math and logic problems",
+      "description": "Classification tasks"
+    },
+    {
+      "id": "code-debugging",
+      "label": "Code debugging",
+      "description": "When model has built-in reasoning"
+    },
+    {
+      "id": "less-effective",
+      "label": "Less Effective",
+      "description": "More Effective"
+    },
+    {
+      "id": "dont-use-markdown",
+      "label": "\"Don't use markdown\"",
+      "description": "\"Use prose paragraphs\""
+    }
+  ]
+}

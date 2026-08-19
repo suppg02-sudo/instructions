@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Drawio menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+  "static": [
+    {
+      "id": "deploy-recommended",
+      "label": "Deploy (Recommended)",
+      "description": "Clone repo, configure LiteLLM, start"
+    },
+    {
+      "id": "check-status",
+      "label": "Check Status",
+      "description": "Container health, port, LiteLLM"
+    },
+    {
+      "id": "setup-nginx-proxy",
+      "label": "Setup Nginx Proxy",
+      "description": "Reverse proxy with domain + SSL"
+    },
+    {
+      "id": "restart-container",
+      "label": "Restart Container",
+      "description": "Restart the next-ai-draw-io container"
+    },
+    {
+      "id": "view-logs",
+      "label": "View Logs",
+      "description": "Show recent container logs"
+    },
+    {
+      "id": "remove",
+      "label": "Remove",
+      "description": "Stop and remove container (keeps data)"
+    },
+    {
+      "id": "exit",
+      "label": "Exit",
+      "description": "Return to previous context"
+    },
+    {
+      "id": "drawio",
+      "label": "Drawio",
+      "description": "Full management menu"
+    }
+  ]
+}

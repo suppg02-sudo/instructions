@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "2.0.0",
+  "description": "Trigger system menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-08-10",
+
+  "static": [
+    {
+      "id": "all",
+      "label": "📋 All Triggers",
+      "description": "List every trigger shortcut + word"
+    },
+    {
+      "id": "search",
+      "label": "🔍 Search",
+      "description": "Find a trigger by keyword"
+    },
+    {
+      "id": "validate",
+      "label": "🔧 Validate & Health",
+      "description": "validate_triggers.py + check_trigger_health.py"
+    },
+    {
+      "id": "stats",
+      "label": "📊 Stats",
+      "description": "record_trigger.py --stats + session stats"
+    },
+    {
+      "id": "add",
+      "label": "➕ Add New Trigger",
+      "description": "Register a trigger word end-to-end"
+    },
+    {
+      "id": "session-analysis",
+      "label": "🧠 Session Analysis",
+      "description": "Mine recent sessions for unresolved issues & gaps"
+    },
+    {
+      "id": "context-bloat",
+      "label": "🐘 Context-Bloat Audit",
+      "description": "context_bloat_audit.py — what forces compaction (edit echo, big parts)"
+    }
+  ],
+
+  "phase_specific": {}
+}

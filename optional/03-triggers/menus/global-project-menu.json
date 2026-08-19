@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "2.0.0",
+  "description": "Project menu options — hub-spoke from global-config.json",
+  "updated": "2026-04-04",
+
+  "static": [
+    {"id": "status", "label": "📊 Status", "description": "Phase, priority, next action"},
+    {"id": "phase", "label": "🔄 Phase", "description": "Advance, regress, exit criteria"},
+    {"id": "context", "label": "📚 Context", "description": "Webpages, notes, schedule"}
+  ],
+
+  "phase_specific": {
+    "plan": [{"id": "impl_plan", "label": "📝 Plan", "description": "View/edit implementation plan"}],
+    "active": [{"id": "run", "label": "▶️ Run", "description": "Execute today's task"}],
+    "harvest": [{"id": "lessons", "label": "📝 Lessons", "description": "Capture lessons learned"}],
+    "rest": [{"id": "restart", "label": "🔁 Restart", "description": "Reactivate project"}]
+  }
+}

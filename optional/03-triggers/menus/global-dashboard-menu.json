@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Dashboard menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "rebuild-all",
+      "label": "🏗️ Rebuild All",
+      "description": "Rebuild dashboard, chat-standalone…"
+    },
+    {
+      "id": "open-standalone",
+      "label": "💬 Open Standalone",
+      "description": "View standalone chat (8058)"
+    },
+    {
+      "id": "update-themes",
+      "label": "🎨 Update Themes",
+      "description": "Modify theme CSS or ThemePicker"
+    },
+    {
+      "id": "admin-menu",
+      "label": "📝 Admin Menu",
+      "description": "Add/remove footer menu items"
+    },
+    {
+      "id": "status",
+      "label": "📊 Status",
+      "description": "Check container health and ports"
+    },
+    {
+      "id": "bookmarks",
+      "label": "🔖 Bookmarks",
+      "description": "Modify header bookmark links"
+    },
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "description": "Dashboard management menu"
+    }
+  ]
+}

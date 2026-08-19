@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "version": "1.0.0",
+    "description": "Project Factory menu options — domain options for build_menu.py",
+    "updated": "2026-05-16",
+    "static": [
+        {
+            "id": "status",
+            "label": "Status",
+            "description": "Phase, priority, next action"
+        },
+        {
+            "id": "phase",
+            "label": "Phase",
+            "description": "Advance, regress, exit criteria"
+        },
+        {
+            "id": "context",
+            "label": "Context",
+            "description": "Webpages, notes, schedule"
+        },
+        {
+            "id": "capture",
+            "label": "Capture",
+            "description": "Save session findings to project"
+        }
+    ]
+}

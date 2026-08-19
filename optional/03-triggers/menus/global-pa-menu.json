@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "PA Dashboard menu options",
+  "updated": "2026-07-27",
+  "static": [
+    {
+      "id": "open",
+      "label": "Open Dashboard",
+      "description": "Open PA dashboard at http://ubuntu4:8901/personal-assistant.html"
+    },
+    {
+      "id": "edit",
+      "label": "Edit Dashboard",
+      "description": "Edit the PA dashboard HTML file"
+    },
+    {
+      "id": "status",
+      "label": "Check Service",
+      "description": "Verify fileserver-8901 and config-api-8910 are running"
+    },
+    {
+      "id": "config",
+      "label": "View Config",
+      "description": "View the current dashboard config JSON"
+    }
+  ],
+  "phase_specific": {
+    "phases": []
+  }
+}

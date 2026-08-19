@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Space menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "homarr",
+      "label": "homarr",
+      "description": "Check Homarr container logs"
+    },
+    {
+      "id": "maintenance",
+      "label": "maintenance",
+      "description": "System maintenance tasks"
+    },
+    {
+      "id": "docker",
+      "label": "docker",
+      "description": "Container management"
+    },
+    {
+      "id": "openmemory",
+      "label": "openmemory",
+      "description": "Store cleanup history"
+    }
+  ],
+  "phase_specific": {
+    "phases": []
+  }
+}

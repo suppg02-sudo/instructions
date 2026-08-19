@@ -1,0 +1,10 @@
+{
+  "static": [
+    {"label": "View Jobs", "description": "List current cron jobs and their schedules"},
+    {"label": "Manage Jobs", "description": "Add, remove, enable, or disable cron jobs"},
+    {"label": "Logs & Monitoring", "description": "Check cron execution logs and job health"},
+    {"label": "Templates", "description": "Common cron job templates for skills"},
+    {"label": "Exit", "description": "No action needed"}
+  ],
+  "phase_specific": {}
+}

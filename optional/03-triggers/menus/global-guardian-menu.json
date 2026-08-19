@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Guardian menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-07-10",
+  "static": [
+    {
+      "id": "read-report",
+      "label": "Read Report",
+      "description": "Full detailed guardian report"
+    },
+    {
+      "id": "improvements",
+      "label": "Improvements",
+      "description": "Recommended fixes from status"
+    },
+    {
+      "id": "check-status",
+      "label": "Check Status",
+      "description": "Quick health snapshot"
+    },
+    {
+      "id": "topology-map",
+      "label": "Topology Map",
+      "description": "Live SVG of containers + services"
+    },
+    {
+      "id": "blog-post",
+      "label": "Blog Post from Output",
+      "description": "Generate post from guardian data"
+    },
+    {
+      "id": "extend-guardian",
+      "label": "Extend Guardian",
+      "description": "Add new checks or remediation"
+    },
+    {
+      "id": "exit",
+      "label": "Exit",
+      "description": "Close the Guardian menu"
+    }
+  ],
+  "remediation": {
+    "description": "Dynamic follow-up menu — options generated at runtime from parsed issues. Built via build_menu.py with --domain JSON. Each option includes root cause in description.",
+    "template": [
+      {
+        "id": "fix-all-critical-high",
+        "label": "Fix all critical+high",
+        "description": "Batch fix all critical/high issues"
+      },
+      {
+        "id": "fix-individual",
+        "label": "Fix individual issue",
+        "description": "Per-issue fix with root cause shown"
+      },
+      {
+        "id": "fix-medium",
+        "label": "Fix medium issues",
+        "description": "Dirty repos, stale images, swap"
+      },
+      {
+        "id": "exit",
+        "label": "Exit",
+        "description": "No action taken"
+      }
+    ]
+  }
+}

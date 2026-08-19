@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Validate Delivery menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "validation-checks",
+      "label": "Validation Checks",
+      "description": "Manage validation checks"
+    },
+    {
+      "id": "aggregate-results",
+      "label": "Aggregate Results",
+      "description": "Manage aggregate results"
+    },
+    {
+      "id": "decision-and-output",
+      "label": "Decision and Output",
+      "description": "Manage decision and output"
+    },
+    {
+      "id": "fix-instructions-generator",
+      "label": "Fix Instructions Generator",
+      "description": "Manage fix instructions generator"
+    },
+    {
+      "id": "output-format",
+      "label": "Output Format",
+      "description": "Manage output format"
+    },
+    {
+      "id": "constraints",
+      "label": "Constraints",
+      "description": "Manage constraints"
+    }
+  ]
+}

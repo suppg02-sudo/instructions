@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Openrag menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "service",
+      "label": "Service",
+      "description": "Internal Port"
+    },
+    {
+      "id": "chunk-size",
+      "label": "chunk_size",
+      "description": "400-1500 based on doc type"
+    },
+    {
+      "id": "chunk-overlap",
+      "label": "chunk_overlap",
+      "description": "10-25% based on content"
+    },
+    {
+      "id": "table-structure",
+      "label": "table_structure",
+      "description": "true/false"
+    },
+    {
+      "id": "ocr",
+      "label": "ocr",
+      "description": "true/false"
+    },
+    {
+      "id": "picture-descriptions",
+      "label": "picture_descriptions",
+      "description": "true/false"
+    },
+    {
+      "id": "embedding-model",
+      "label": "embedding_model",
+      "description": "BAAI/bge-large, all-mpnet, etc."
+    },
+    {
+      "id": "parser",
+      "label": "parser",
+      "description": "Docling/PyMuPDF4LLM/Unstructured"
+    }
+  ]
+}

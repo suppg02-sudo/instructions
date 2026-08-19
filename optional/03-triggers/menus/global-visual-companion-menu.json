@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "description": "Visual Companion menu domain options — hub-spoke from global-config.json",
+  "updated": "2026-04-08",
+  "static": [
+    {
+      "id": "constraint",
+      "label": "Constraint",
+      "description": "Detail"
+    },
+    {
+      "id": "bind-host",
+      "label": "Bind host",
+      "description": "`0.0.0.0` — NOT `127.0.0.1` (Tailscale…"
+    },
+    {
+      "id": "url-host",
+      "label": "URL host",
+      "description": "`ubuntu4` — the Tailscale hostname"
+    },
+    {
+      "id": "default-bind",
+      "label": "Default bind",
+      "description": "`127.0.0.1` (wrong — explicitly…"
+    },
+    {
+      "id": "port",
+      "label": "Port",
+      "description": "Random high port (assigned by server…"
+    },
+    {
+      "id": "content-dir",
+      "label": "Content dir",
+      "description": "`/tmp/brainstorm-<pid>-<epoch>/content/`…"
+    },
+    {
+      "id": "state-dir",
+      "label": "State dir",
+      "description": "`/tmp/brainstorm-<pid>-<epoch>/state/`…"
+    },
+    {
+      "id": "server-type",
+      "label": "Server type",
+      "description": "Node.js HTTP + WebSocket server"
+    }
+  ]
+}
