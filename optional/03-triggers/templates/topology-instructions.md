@@ -2,49 +2,73 @@
 
 > **Trigger**: `topology` | **Purpose**: Align this device with central topology, then manage device mesh
 > **Context file**: this file
-> **When to use**: When the user types `topology` — auto-aligns with central topology, then shows management menu
+> **When to use**: When the user types `topology` — auto-aligns with central topology, then shows management menu via question tool
 
-## What `topology` does
+## Agent Workflow
 
-1. **Auto-align** — runs `topology align --auto` to sync with central topology
-2. **Show menu** — presents topology management options via question tool
+When user types `topology`, YOU (the agent) MUST:
+
+1. **Run alignment** — execute `topology align --auto` via bash tool
+2. **Present menu** — use `question` tool to show management options
+3. **Execute selection** — run chosen topology subcommand via bash tool
+
+## Step 1: Auto-Align (bash tool)
+
+```bash
+topology align --auto
+```
+
+This pulls latest, detects drift, runs converge, validates contract peers.
+
+## Step 2: Present Menu (question tool)
+
+After alignment completes, use the **question tool** with these options:
+
+```json
+{
+  "question": "Topology aligned ✓ — choose action:",
+  "header": "Topology Menu",
+  "options": [
+    {"label": "Show status", "description": "topology status — repo state, device count, dirty?"},
+    {"label": "List devices", "description": "topology list — all devices + roles"},
+    {"label": "Show this device", "description": "topology show — this device's full stanza"},
+    {"label": "Show all devices", "description": "topology show (no args) — all stanzas"},
+    {"label": "Sync (pull+push)", "description": "topology sync — pull, commit diff, push"},
+    {"label": "Probe reachability", "description": "topology probe --write --push — refresh reachability"},
+    {"label": "Check health", "description": "topology check — mesh, peers, secrets validation"},
+    {"label": "Converge templates", "description": "topology converge — reconcile all devices to templates"},
+    {"label": "Edit this device", "description": "topology update — edit this device's stanza"},
+    {"label": "Exit", "description": "Alignment complete, ready to work"}
+  ],
+  "multiple": false
+}
+```
+
+## Step 3: Execute Selection (bash tool)
+
+Based on question tool response, run the corresponding command:
+
+| Selection | Command |
+|-----------|---------|
+| Show status | `topology status` |
+| List devices | `topology list` |
+| Show this device | `topology show` |
+| Show all devices | `topology show` (no args) |
+| Sync (pull+push) | `topology sync` |
+| Probe reachability | `topology probe --write --push` |
+| Check health | `topology check` |
+| Converge templates | `topology converge` |
+| Edit this device | `topology update --add <name>` / `topology update --remove <name>` |
+| Exit | (do nothing) |
 
 ## Alignment Phase (automatic)
 
-Runs `topology align --auto` which:
+`topology align --auto` does:
 - Pulls latest topology from central repo
 - Checks this device's stanza in TOPOLOGY.md
 - Verifies per-device files (intent, behaviour, contract, triggers, topology)
 - Validates contract peer symmetry
 - Auto-reconciles via converge if needed
-
-## Management Menu (after alignment)
-
-Presents options via question tool:
-
-| Option | Action |
-|--------|--------|
-| **Show status** | `topology status` — repo state, device count, dirty? |
-| **List devices** | `topology list` — all devices + roles |
-| **Show this device** | `topology show` — this device's full stanza |
-| **Show all devices** | `topology show` (no args) — all stanzas |
-| **Sync (pull+push)** | `topology sync` — pull, commit diff, push |
-| **Probe reachability** | `topology probe --write --push` — refresh reachability |
-| **Check health** | `topology check` — mesh, peers, secrets validation |
-| **Converge templates** | `topology converge` — reconcile all devices to templates |
-| **Edit this device** | `topology update` — edit this device's stanza |
-| **Aligned & done** | Exit — alignment complete, ready to work |
-
-## Implementation
-
-```bash
-# 1. Auto-align (non-interactive)
-topology align --auto
-
-# 2. Show menu via question tool
-# Options presented via question tool
-# Execute selected topology subcommand
-```
 
 ## Example Flow
 
@@ -52,8 +76,7 @@ topology align --auto
 > topology
 [align] Pulling latest topology...
 [align] Central stanza found for ubuntu4
-[align] Per-device files: intent.md ✓, behaviour.md ✓, contract.md ✗, triggers.md ✗
-[align] Contract declares 1 peer(s)
+[align] Per-device files: contract.md ✗, triggers.md ✗
 [align] Running converge...
   scaffolded ubuntu4/contract.md, ubuntu4/triggers.md
   installed 20 triggers
@@ -61,22 +84,10 @@ topology align --auto
 
 🧭 Topology Menu — ubuntu4 aligned ✓
 
-1. Show status
-2. List devices  
-3. Show this device
-4. Show all devices
-5. Sync (pull+push)
-6. Probe reachability
-7. Check health
-8. Converge templates
-9. Edit this device
-10. Aligned & done (Exit)
-
-Select [1-10]:
+[question tool presents 10 options]
+User selects "Show status"
+> topology status
+repo: /home/paul/topology  branch: main
+devices: 5
+dirty: no
 ```
-
-## Files Created on First Alignment
-
-- `devices/<hostname>/contract.md` — from global template
-- `devices/<hostname>/triggers.md` — per-device trigger extras
-- `~/.config/opencode/agents/context/` — all 20 trigger context files
