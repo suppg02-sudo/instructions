@@ -1,7 +1,0 @@
-{
-  "static": [
-    {"id": "svg", "label": "SVG Diagram", "description": "Publication-ready vector output"},
-    {"id": "drawio", "label": "Draw.io", "description": "Editable AI-assisted diagram"},
-    {"id": "visual-companion", "label": "Visual Companion", "description": "Browser-based visual workspace"}
-  ]
-}
