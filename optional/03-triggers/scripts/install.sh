@@ -45,6 +45,7 @@ TRIGGERS=(
   "dashboard-instructions.md:>d"
   "brain-instructions.md:>brain"
   "topology-instructions.md:topology"
+  "review-instructions.md:review"
 )
 
 # Shell config detection

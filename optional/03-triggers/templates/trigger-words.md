@@ -55,4 +55,6 @@
 
 | **Topology** | `topology` | Align with central topology (auto-sync, drift detect, converge), then manage device mesh via menu | Navigation |
 
+| **Review** | `review`, `r` | Analyze session logs for corrections, deviations, repeating errors, trigger suggestions | Self-Improvement |
+
 | **Agent Check** | `agent-check`, `check agents` | Universal per-agent health/preflight checklist (opencode, librechat, nao) — static + live layers, run via `agent-check.py --agent X` | Operations |
