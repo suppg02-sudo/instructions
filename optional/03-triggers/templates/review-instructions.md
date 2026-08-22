@@ -41,15 +41,26 @@ If "Custom range" selected, ask for start/end dates via follow-up question.
 
 ## Step 2: Analyze Session Logs
 
-Read session logs from `~/.config/opencode/logs/` (or wherever logs are stored):
+Read the opencode log at `~/.local/share/opencode/log/opencode.log` (the primary unified log for all sessions):
 
 ```bash
-# Find log files for the scope
-find ~/.config/opencode/logs -name "*.jsonl" -mtime -${DAYS} | head -20
+# Analyze the main opencode log (grep with -a since it's binary-ish with embedded data)
+# Errors / retries
+grep -a "level=ERROR" ~/.local/share/opencode/log/opencode.log | grep -oaP 'error.error.message="[^"]*"' | sort | uniq -c | sort -rn | head -20
 
-# Or read current session log
-cat ~/.config/opencode/logs/session-$(date +%Y-%m-%d).jsonl
+# Repeating tool sequences (ssh, git, topology patterns)
+grep -a "evaluated permission=bash" ~/.local/share/opencode/log/opencode.log \
+  | grep -oaP 'pattern="(ssh|git|topology|docker)[^"]*"' \
+  | sort | uniq -c | sort -rn | head -20
+
+# Rejections / failures (git push, merge conflicts)
+grep -a "fetch first\|rejected\|failed to push\|merge conflict" ~/.local/share/opencode/log/opencode.log | wc -l
+
+# Scope filter by run id (session) if needed — each session has run=XXXXX
+grep -a "run=9c76e4da" ~/.local/share/opencode/log/opencode.log
 ```
+
+**Note:** OpenCode stores session data in a SQLite DB (`~/.local/share/opencode/opencode.db`) plus a unified log (`~/.local/share/opencode/log/opencode.log`). There are **no per-session `.jsonl` files** — use the single log and filter by `run=`, timestamp, or session id.
 
 **Analyze for:**
 
@@ -132,14 +143,16 @@ After fixes applied:
 ## Implementation Notes
 
 ### Log Locations
-- OpenCode logs: `~/.config/opencode/logs/session-*.jsonl`
+- Main opencode log: `~/.local/share/opencode/log/opencode.log` (unified, all sessions, grep with `-a`)
+- Session DB: `~/.local/share/opencode/opencode.db` (SQLite, structured session data)
+- Tool output: `~/.local/share/opencode/tool-output/`
 - Trigger usage: `~/.config/opencode/triggers.yaml`
-- Session state: `~/.config/opencode/state/`
 
 ### Key Log Fields to Analyze
-- `tool_calls` — repeated tool sequences
-- `errors` — error patterns
-- `tool_results` — failed operations
+- `run=` — session id (filter specific session)
+- `tool_calls` / tool patterns — repeated tool sequences
+- `errors` / `error.error.message` — error patterns
+- `evaluated permission=...` — repeated bash/edit operations
 - `user_inputs` — repeated manual steps
 
 ### Trigger Suggestion Heuristics
